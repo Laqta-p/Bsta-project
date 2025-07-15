@@ -85,9 +85,12 @@ footer{
   color: #FFF1CA;
   font-size: 1.5rem;
   font-weight: 500;
+<<<<<<< HEAD
 }
 
 .copyrights{
   display: flex;
   gap: 2rem;
+=======
+>>>>>>> 4dd4361dfbaf022e0dab7fade39e79670a6c12f6
 }
