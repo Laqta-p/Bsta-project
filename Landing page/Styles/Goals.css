@@ -25,10 +25,7 @@
   font-weight: 400;
 }
 .goals{
-<<<<<<< HEAD
   padding-inline: 86px;
-=======
->>>>>>> 4dd4361dfbaf022e0dab7fade39e79670a6c12f6
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -37,11 +34,7 @@
 }
 .goal{
   display: flex;
-<<<<<<< HEAD
   align-items: end;
-=======
-  
->>>>>>> 4dd4361dfbaf022e0dab7fade39e79670a6c12f6
   flex-flow:column ;
   flex-basis:25% ;
   gap: 15px ;
