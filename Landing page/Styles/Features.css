@@ -1,0 +1,68 @@
+.a {
+  background-color: rgb(255, 255, 255);
+  text-align: center;
+  margin: 0 8.6rem; /* 86px → 8.6rem */
+}
+
+.a h2 {
+  color: #1b4119;
+  font-size: 4rem; /* 40px */
+  font-family: "IBM Plex Sans Arabic", sans-serif;
+  font-weight: bold;
+  margin-top: 6.6rem; /* 66px */
+}
+
+.desc1 {
+  margin-bottom: 3rem; /* 30px */
+  font-size: 2.4rem; /* 24px */
+  font-family: "IBM Plex Sans Arabic", sans-serif;
+  color: #1b4119;
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 2.1rem; /* 21px */
+  padding-inline: 8.6rem; /* 86px */
+  padding-bottom: 10rem; /* 100px */
+}
+
+.card {
+  background-color: rgb(243, 246, 249);
+  border-radius: 1rem; /* 10px */
+  padding: 2rem; /* 20px */
+  width: 29.8rem; /* 298px */
+  height: 21.8rem; /* 218px */
+  justify-items: center;
+  box-shadow: 0px 1.5rem 3.92rem -0.8rem rgba(0, 0, 0, 0.15);
+  border: 0.1rem solid rgba(0, 0, 0, 0.02);
+}
+
+.card h4 {
+  color: #1b4119;
+  font-size: 2.4rem; /* 24px */
+  font-weight: 400;
+  padding-top: 0.5rem; /* 5px */
+  padding-bottom: 0.5rem;
+}
+
+.card p {
+  color: #2d4f2b;
+  font-size: 1.6rem; /* 16px */
+  font-weight: 300;
+}
+
+.icon {
+  font-size: 5rem; /* 50px */
+  background-color: #2d4f2b;
+  border-radius: 50%; /* يبقى متل هو */
+  width: 8rem; /* 80px */
+  height: 8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.svgIcon path {
+  fill: #FFF1CA;
+}

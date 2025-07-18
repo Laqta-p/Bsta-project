@@ -1,0 +1,263 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "IBM Plex Sans Arabic", sans-serif;
+  background: linear-gradient(135deg, #052e1c, #154b36);
+  color: white;
+  direction: rtl;
+}
+
+.page {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row-reverse; /*Revarse sides*/
+  min-height: 100vh;
+}
+
+/*Left Side*/
+.left {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  text-align: center;
+}
+
+.image-container {
+  width: 100%;
+  max-width: 70%;
+  margin-bottom: 20px;
+}
+
+.image-container img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  border-radius: 0;
+  background: transparent;
+}
+
+.left h2 {
+  font-size: 24px;
+  margin: 10px 0 5px;
+  font-weight: bold;
+}
+
+.left p {
+  font-size: 14px;
+  color: #ddd;
+}
+
+/*Right Side*/
+.right {
+  flex: 0 0 35%;
+  max-width: 35%;
+  background-color: rgba(255, 255, 255, 0);
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 18px;
+  margin-bottom: 25px;
+}
+.logo a{
+  text-decoration: none;
+}
+
+.logo img {
+  width: 53px;
+  height: 44px;
+}
+
+.branding {
+  font-family: "IBM Plex Sans Arabic", sans-serif;
+  font-weight: 900;
+  font-size: 24px;
+  color: #f4e8c2;
+}
+
+/*Sign in/up Buttons*/
+.tabs {
+  display: flex;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 9px;
+  overflow: hidden;
+  margin-bottom: 25px;
+}
+
+.tab {
+  flex: 1;
+  padding: 12px;
+  background: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: "IBM Plex Sans Arabic", sans-serif;
+  font-weight: 400;
+}
+
+.tab.active {
+  background-color: #052e1c;
+  color: white;
+}
+
+/*Sign form*/
+.form label {
+  display: block;
+  margin: 12px 0 5px;
+}
+
+.form input[type="text"],
+.form input[type="email"],
+.form input[type="password"],
+.form input[type="tel"] {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+.name-fields {
+  display: flex;
+  gap: 10px;
+}
+
+.name-fields .field {
+  flex: 1;
+}
+
+.phone-input {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.phone-input .flag {
+  width: 40px;
+  height: 40px;
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.phone-input img {
+  width: 30px;
+}
+
+.submit-btn {
+  width: 100%;
+  margin-top: 20px;
+  padding: 12px;
+  background-color: black;
+  border: none;
+  color: white;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: "IBM Plex Sans Arabic", sans-serif;
+}
+
+.note {
+  margin-top: 15px;
+  font-size: 12px;
+  color: #ccc;
+  text-align: center;
+}
+
+.note a {
+  color: #9efdc3;
+  text-decoration: none;
+}
+
+.password-wrapper {
+  position: relative;
+}
+
+.password-wrapper input {
+  width: 100%;
+  padding: 10px 40px 10px 10px;
+  border-radius: 6px;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+.toggle-password {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 18px;
+  color: #ccc;
+}
+
+/*Responesive Code*/
+@media (max-width: 768px) {
+  .page {
+    flex-direction: column;
+  }
+
+  .left,
+  .right {
+    flex: 1 1 100%;
+    max-width: 100%;
+    padding: 20px;
+  }
+
+  .image-container {
+    max-width: 100%;
+    margin-bottom: 15px;
+  }
+
+  .branding {
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .logo {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .tabs {
+    flex-direction: row;
+    font-size: 14px;
+  }
+
+  .form input[type="text"],
+  .form input[type="email"],
+  .form input[type="password"],
+  .form input[type="tel"] {
+    font-size: 14px;
+  }
+
+  .submit-btn {
+    padding: 10px;
+    font-size: 15px;
+  }
+
+  .name-fields {
+    flex-direction: column;
+    gap: 0;
+  }
+}
