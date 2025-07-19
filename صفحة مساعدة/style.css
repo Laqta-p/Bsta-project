@@ -1,0 +1,550 @@
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'IBM Plex Sans Arabic', sans-serif;
+      margin: 0;
+      padding: 0;
+      direction: rtl;
+      background-color: #fff;
+      color: #222;
+    }
+
+    
+    .header {
+      background: linear-gradient(135deg, #4a5568 0%, #2d3748 100%);
+      padding: 1rem 2rem;
+      color: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0;
+    }
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+    .logo-img {
+      width: 40px;
+      height: 40px;
+      object-fit: contain;
+      cursor: pointer;
+    }
+    .nav-menu {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+      align-items: center;
+      margin: 0;
+      padding: 0;
+    }
+    .nav-item {
+      position: relative;
+    }
+    .nav-link {
+      color: #FFF1CA;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      padding: 0.5rem 0;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      opacity: 0.9;
+    }
+    .nav-link:hover {
+      opacity: 1;
+      color: #e2e8f0;
+    }
+    .nav-link.has-dropdown::after {
+      content: "";
+      width: 0;
+      height: 0;
+      border-left: 4px solid transparent;
+      border-right: 4px solid transparent;
+      border-top: 5px solid currentColor;
+      transition: transform 0.3s ease;
+    }
+    .nav-item:hover .nav-link.has-dropdown::after {
+      transform: rotate(180deg);
+    }
+
+    /* Dropdown Menus */
+    .dropdown {
+      position: absolute;
+      top: 100%;
+      right: 50%;
+      transform: translateX(50%);
+      background: white;
+      border-radius: 0.9375rem;
+      box-shadow: 0 1.25rem 3.75rem rgba(0, 0, 0, 0.3);
+      padding: 1.5625rem 0;
+      min-width: 20rem;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateX(50%) translateY(-0.9375rem);
+      transition: all 0.15s ease;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(1.25rem);
+      text-align: right;
+    }
+    .nav-item:hover .dropdown {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(50%) translateY(0);
+    }
+    .dropdown::before {
+      content: "";
+      position: absolute;
+      top: -0.5rem;
+      right: 50%;
+      transform: translateX(50%);
+      width: 1rem;
+      height: 1rem;
+      background: white;
+      border-radius: 0.1875rem;
+      rotate: 45deg;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      border-right: 1px solid rgba(255, 255, 255, 0.2);
+      text-align: right;
+    }
+    .dropdown-section {
+      padding: 0 1.5625rem;
+      margin-bottom: 1.25rem;
+      text-align: right;
+    }
+    .dropdown-section:last-child {
+      margin-bottom: 0;
+    }
+    .dropdown-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: #666;
+      margin-bottom: 0.9375rem;
+      text-transform: uppercase;
+      letter-spacing: 0.03125rem;
+      text-align: right;
+    }
+    .dropdown-item {
+      display: flex;
+      align-items: center;
+      gap: 0.9375rem;
+      padding: 0.75rem 0;
+      color: #333;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      border-radius: 0.5rem;
+      margin: 0 -0.625rem;
+      padding-left: 0.625rem;
+      padding-right: 0.625rem;
+      flex-direction: row-reverse;
+    }
+    .dropdown-item:hover {
+      background: #f8f9fa;
+      color: #2d5016;
+      transform: translateX(-0.3125rem);
+    }
+    .dropdown-icon {
+      width: 2.5rem;
+      height: 2.5rem;
+      background: linear-gradient(135deg, #2d5016, #4a7c1a);
+      border-radius: 0.625rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+    .dropdown-item:hover .dropdown-icon {
+      transform: scale(1.1);
+      box-shadow: 0 0.3125rem 0.9375rem rgba(45, 80, 22, 0.3);
+    }
+    .dropdown-icon img {
+      width: 1.25rem;
+      height: 1.25rem;
+      object-fit: contain;
+      display: block;
+    }
+    .dropdown-content h4 {
+      font-size: 15px;
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 0.25rem;
+    }
+    .dropdown-content p {
+      font-size: 13px;
+      color: #666;
+      line-height: 1.4;
+    }
+    .dropdown-divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #e9ecef, transparent);
+      margin: 0.9375rem 0;
+    }
+
+    
+    .action-buttons {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .btn {
+      padding: 0.75rem 1.5rem;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 14px;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+    .btn-login {
+      background: transparent;
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+    .btn-login:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 255, 255, 0.6);
+      transform: translateY(-1px);
+    }
+   .btn-signup {
+  background-color: #FFF1CA;
+  color: #2D4F2B;
+  font-weight: 600;
+  border: none;
+  border-radius: 25px;
+  box-shadow: none;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-signup:hover {
+  background-color: #fce9ae; 
+  transform: translateY(-2px);
+  box-shadow: none;
+}
+
+vices-dropdown {
+      min-width: 22.5rem;
+    }
+    .store-dropdown {
+      min-width: 23.75rem;
+    }
+
+  
+    .hero {
+  background: linear-gradient(135deg, #4a5568 0%, #2d3748 100%);
+  color: #FFF1CA;
+  padding: 80px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+    .hero-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: auto;
+      gap: 50px;
+    }
+    .hero-text {
+      flex: 1;
+      text-align: right;
+    }
+    .hero-text h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+    .hero-text p {
+      font-size: 18px;
+      line-height: 1.6;
+      opacity: 0.9;
+      margin-bottom: 0;
+    }
+    .hero-img {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+    .hero-img img {
+      max-width: 400px;
+      height: auto;
+    }
+
+    /* الأسئلة الشائعة */
+    .faq-section {
+      background-color: #f8fafc;
+      padding: 80px 20px;
+    }
+    .faq-section h2 {
+      text-align: center;
+      margin-bottom: 50px;
+      font-size: 32px;
+      font-weight: 600;
+      color: #2d3748;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 0 20px;
+    }
+    .faq {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      padding: 0 20px;
+    }
+    .faq details {
+      background-color: #fff;
+      border-radius: 12px;
+      padding: 0;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+      border: 1px solid #e2e8f0;
+      overflow: hidden;
+    }
+    .faq summary {
+      font-size: 16px;
+      font-weight: 500;
+      padding: 20px 25px;
+      cursor: pointer;
+      background-color: #fff;
+      border: none;
+      outline: none;
+      position: relative;
+      color: #2d3748;
+      list-style: none;
+    }
+    .faq summary::-webkit-details-marker {
+      display: none;
+    }
+    .faq summary::after {
+      content: '▼';
+      position: absolute;
+      left: 25px;
+      font-size: 12px;
+      color: #718096;
+      transition: transform 0.3s ease;
+    }
+    .faq details[open] summary::after {
+      transform: rotate(180deg);
+    }
+    .faq details[open] summary {
+      border-bottom: 1px solid #e2e8f0;
+    }
+    .faq details p {
+      padding: 0 25px 20px;
+      color: #4a5568;
+      line-height: 1.6;
+      font-size: 14px;
+    }
+
+    /* نموذج التواصل */
+    .contact-form {
+      padding: 80px 20px;
+      background-color: #fff;
+    }
+    .contact-form h2 {
+      text-align: center;
+      margin-bottom: 50px;
+      font-size: 32px;
+      font-weight: 600;
+      color: #2d3748;
+    }
+    .form-container {
+      max-width: 600px;
+      margin: auto;
+      background-color: #f8fafc;
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    }
+    .contact-form form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .form-row {
+      display: flex;
+      gap: 15px;
+    }
+    .form-row input {
+  flex: 1;
+  min-width: 0;
+}
+
+    .contact-form input,
+    .contact-form select,
+    .contact-form textarea {
+      padding: 15px 20px;
+      border-radius: 8px;
+      border: 1px solid #e2e8f0;
+      font-size: 14px;
+      background-color: #fff;
+      font-family: 'IBM Plex Sans Arabic', sans-serif;
+    }
+    .contact-form input::placeholder,
+    .contact-form textarea::placeholder {
+      color: #a0aec0;
+    }
+    .contact-form button {
+      padding: 15px;
+      border: none;
+      background-color: #4a5568;
+      color: #fff;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 500;
+      cursor: pointer;
+      font-family: 'IBM Plex Sans Arabic', sans-serif;
+      transition: background-color 0.3s ease;
+    }
+    .contact-form button:hover {
+      background-color: #2d3748;
+    }
+
+    /* طرق التواصل */
+    .contact-methods {
+      padding: 80px 20px;
+      background-color: #f8fafc;
+    }
+    .contact-methods h2 {
+      text-align: center;
+      margin-bottom: 50px;
+      font-size: 32px;
+      font-weight: 600;
+      color: #2d3748;
+    }
+    .methods {
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+      justify-content: center;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .method {
+      flex: 1 1 300px;
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+      text-align: center;
+      border: 1px solid #e2e8f0;
+    }
+    .method-icon {
+      width: 60px;
+      height: 60px;
+      margin: 0 auto 20px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      color: #fff;
+    }
+    .email-icon {
+      background-color: #4a5568;
+    }
+    .whatsapp-icon {
+      background-color: #25d366;
+    }
+    .chat-icon {
+      background-color: #3b82f6;
+    }
+    .method h3 {
+      margin: 0 0 10px 0;
+      font-size: 18px;
+      font-weight: 600;
+      color: #2d3748;
+    }
+    .method p {
+      margin: 0 0 20px 0;
+      color: #718096;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+    .method button {
+      background-color: #4a5568;
+      color: #fff;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 500;
+      font-family: 'IBM Plex Sans Arabic', sans-serif;
+      transition: background-color 0.3s ease;
+    }
+    .method button:hover {
+      background-color: #2d3748;
+    }
+    .whatsapp-button {
+      background-color: #25d366 !important;
+    }
+    .whatsapp-button:hover {
+      background-color: #20b858 !important;
+    }
+    .chat-button {
+      background-color: #3b82f6 !important;
+    }
+    .chat-button:hover {
+      background-color: #2563eb !important;
+    }
+
+    /* تحسينات الاستجابة */
+    @media (max-width: 768px) {
+      .nav-menu {
+        display: none;
+      }
+      .dropdown {
+        min-width: 17.5rem;
+      }
+      .action-buttons {
+        gap: 0.5rem;
+      }
+      .btn {
+        padding: 0.5rem 1rem;
+        font-size: 12px;
+      }
+      .hero-content {
+        flex-direction: column;
+        text-align: center;
+      }
+      .hero-text h1 {
+        font-size: 36px;
+      }
+      .form-row {
+        flex-direction: column;
+      }
+      .methods {
+        flex-direction: column;
+      }
+    }
