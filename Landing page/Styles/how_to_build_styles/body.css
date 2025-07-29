@@ -1,0 +1,18 @@
+body {
+  font-size: 500;
+  margin: 0;
+  width: 100%;
+}
+html {
+  font-size: 62.25%; /* يعني 1rem = 10px تقريباً */
+}
+* {
+  margin: 0rem;
+  padding: 0rem;
+  box-sizing: border-box;
+  font-family: "IBM Plex Sans Arabic", sans-serif;
+
+}
+img,button{
+  display: block;
+}
